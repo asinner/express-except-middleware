@@ -1,0 +1,17 @@
+{
+  "name": "express-except-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.ts",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Andrew Sinner <andrewsinner@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "path-to-regexp": "^6"
+  }
+}
