@@ -9,6 +9,9 @@ Pass a string to do a simple path match. Eg. Calls `authMiddleware` unless the
 request path matches `/public`:
 
 
+### `except(option: string, ...)`
+
+
 ```ts
 import { except } from 'express-except-middleware'
 
@@ -22,6 +25,8 @@ request path matches `/public/:id`:
 app.use(except('/public/:id', authMiddleware))
 ```
 
+### `except(option: MatchObject, ...)`
+
 You can pass an object that will match both the method and path. Method is 
 case insensitive. Eg. Calls `authMiddleware` unless a `GET` request was made 
 to the path `/public`.
@@ -29,6 +34,8 @@ to the path `/public`.
 ```ts
 app.use(except({method: 'GET', path: '/public'}), authMiddleware))
 ```
+
+### `except(option: MatchFunction, ...)`
 
 Match using a function. Your function will be called with the request and response
 objects. You must return a `boolean` from your function. Eg. Calls 
@@ -42,6 +49,8 @@ const checkHeader = (req, res) => {
 app.use(except(checkHeader, authMiddleware))
 ```
 
+### `except(option: AsyncMatchFunction, ...)`
+
 Match using a Promise based function that resolves to a boolean. Your function
 will be called the request and response objects. You must resolve to a `boolean`
 from your async function. Eg. Calls `authMiddleware` unless asyncShouldAuthenticate
@@ -53,6 +62,8 @@ function asyncCheck(req, res) {
 }
 app.use(except(asyncCheck, authMiddleware))
 ```
+
+### `except(option: Array<string | MatchObject | MatchFunction>, ...)`
 
 Match using an array of options. This is an OR operation. If at least one option
 matches the request, then `next()` is called and the supplied middleware is 
