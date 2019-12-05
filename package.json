@@ -1,6 +1,6 @@
 {
   "name": "express-except-middleware",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A middleware to conditionally use other middleware on Express servers",
   "main": "dist/index.js",
   "scripts": {
