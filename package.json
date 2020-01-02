@@ -3,7 +3,7 @@
   "repository": {
     "url": "https://github.com/asinner/express-except-middleware.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A middleware to conditionally use other middleware on Express servers",
   "main": "dist/index.js",
   "scripts": {
