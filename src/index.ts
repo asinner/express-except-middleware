@@ -66,7 +66,7 @@ function isExceptedByPath(option: string, reqPath: string): boolean {
 }
 
 function isExceptedByObject(option: MatchObject, path: string, method: string): boolean {
-    const methodMatch = option.method.toLowerCase() === method
+    const methodMatch = option.method.toLowerCase() === method.toLowerCase()
     return isExceptedByPath(option.path, path) && methodMatch
 }
 
